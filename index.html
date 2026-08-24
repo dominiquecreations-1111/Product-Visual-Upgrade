@@ -105,13 +105,6 @@
     padding:120px 0 70px 0;
     background:var(--cream);
   }
-  .urgency-bar{
-    display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;
-    text-align:center; font-size:12.5px; font-weight:600; letter-spacing:0.02em;
-    color:var(--navy-deep); background:rgba(185,137,58,0.14); border:1px solid rgba(185,137,58,0.35);
-    padding:10px 18px; border-radius:999px; margin:0 auto 36px auto; max-width:fit-content;
-  }
-  .urgency-bar .dot{ width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
   .hero-grid{
     display:grid; grid-template-columns:1fr; gap:0;
   }
@@ -230,31 +223,6 @@
   }
   .sec-head p{ margin-top:16px; font-size:15.5px; line-height:1.65; color:var(--ink-soft); }
   .center{ text-align:center; margin-left:auto; margin-right:auto; }
-
-  /* ============ OPENING QUESTION ============ */
-  .question{
-    padding:100px 0 90px 0; background:var(--ink); color:var(--white); text-align:center;
-    border-bottom:1px solid rgba(252,250,246,0.1);
-  }
-  .question .wrap{ max-width:780px; }
-  .question .eyebrow{ color:var(--gold-soft); margin-bottom:24px; }
-  .question h2{
-    font-family:'Cormorant Garamond', serif; font-weight:500;
-    font-size:clamp(30px, 5.2vw, 52px); line-height:1.2; text-wrap:balance;
-    margin-bottom:30px;
-  }
-  .question p{ font-size:16px; line-height:1.7; color:rgba(252,250,246,0.72); max-width:600px; margin:0 auto; }
-
-  /* ============ REFERRAL ============ */
-  .referral{ padding:90px 0; background:var(--ink); color:var(--white); text-align:center; }
-  .referral .wrap{ max-width:640px; }
-  .referral .eyebrow{ color:var(--gold-soft); margin-bottom:18px; }
-  .referral h2{
-    font-family:'Cormorant Garamond', serif; font-weight:500; font-size:clamp(26px,3.6vw,38px);
-    line-height:1.22; margin-bottom:18px; text-wrap:balance;
-  }
-  .referral p{ font-size:15px; line-height:1.7; color:rgba(252,250,246,0.7); margin-bottom:30px; }
-  .referral p b{ color:var(--gold-soft); font-weight:600; }
 
   /* ============ PROOF SLIDER ============ */
   .proof{ padding:100px 0 90px 0; background:var(--ink); color:var(--white); }
@@ -586,7 +554,6 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap">
-    <div class="urgency-bar"><span class="dot"></span><span id="urgencyText">Founding pricing available for a limited time.</span></div>
     <div class="hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Product Photography &amp; Retouching Service</p>
@@ -605,15 +572,6 @@
         <span class="zoom-hint">⊕ Click to zoom</span>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ OPENING QUESTION ============ -->
-<section class="question fade-up">
-  <div class="wrap">
-    <p class="eyebrow">Before You Scroll Any Further</p>
-    <h2>If your product is premium, shouldn't the photo say so too?</h2>
-    <p>Most brands don't actually have a product problem — they have a photo problem. Product Visual Upgrade retouches and restyles what you already sell, so the photo finally matches the quality customers get when it arrives.</p>
   </div>
 </section>
 
@@ -1016,16 +974,6 @@
   </div>
 </section>
 
-<!-- ============ REFERRAL ============ -->
-<section class="referral">
-  <div class="wrap">
-    <p class="eyebrow">Not a Business Owner?</p>
-    <h2>Send a Text. Get Paid.</h2>
-    <p>You don't need a brand of your own to cash in on this. Know someone who needs better product photos? Send them our way. The moment they pay, <b>up to 10% of it is yours</b> — straight cash, no cap, no limit on how many people you refer.</p>
-    <a class="btn btn-primary" id="referral-wa" target="_blank" rel="noopener">Refer a Brand</a>
-  </div>
-</section>
-
 <!-- ============ FAQ ============ -->
 <section class="faq" id="faq">
   <div class="wrap">
@@ -1095,6 +1043,7 @@
     </div>
     <div class="contact-card fade-up">
       <div class="contact-row"><span class="k">WhatsApp</span><a class="v" href="https://wa.me/2348085318908" target="_blank" rel="noopener">+234 808 531 8908</a></div>
+      <div class="contact-row"><span class="k">Instagram</span><a class="v" href="https://instagram.com/dominique_creations_" target="_blank" rel="noopener">@dominique_creations_</a></div>
       <div class="contact-row"><span class="k">Email</span><a class="v" href="mailto:dominiquecreations24@gmail.com">dominiquecreations24@gmail.com</a></div>
     </div>
     <p class="final-line serif">Perception is the First Product.</p>
@@ -1120,34 +1069,14 @@
     elevate: "Hello Dominique Creations. I'm interested in the \u20a650,000 Elevate Product Visual Upgrade package. I'd like to discuss my products and visual requirements.",
     craft: "Hello Dominique Creations. I'm interested in the \u20a6120,000 Craft Product Visual Upgrade package. I'd like to discuss a product collection.",
     campaign: "Hello Dominique Creations. I'm interested in the \u20a6300,000 Campaign Product Visual Upgrade package. I'd like to discuss a collection, launch or campaign.",
-    general: "Hello Dominique Creations. I'd like to upgrade how my products are presented. Here is what my brand sells:",
-    referral: "Hello Dominique Creations. I'd like to refer a brand for the Product Visual Upgrade service. Here's who to reach out to:"
+    general: "Hello Dominique Creations. I'd like to upgrade how my products are presented. Here is what my brand sells:"
   };
   function waLink(msg){ return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg); }
-
-  // ---- Urgency countdown (edit DEADLINE below to change the date this refers to) ----
-  const URGENCY_DEADLINE = new Date('2026-09-01T23:59:59+01:00');
-  (function renderUrgency(){
-    const el = document.getElementById('urgencyText');
-    if(!el) return;
-    const now = new Date();
-    const diffDays = Math.ceil((URGENCY_DEADLINE - now) / (1000 * 60 * 60 * 24));
-    if(diffDays > 1){
-      el.textContent = "Founding pricing closes in " + diffDays + " days — lock in your rate now.";
-    } else if(diffDays === 1){
-      el.textContent = "Founding pricing closes tomorrow — lock in your rate.";
-    } else if(diffDays === 0){
-      el.textContent = "Founding pricing closes today.";
-    } else {
-      el.textContent = "Now booking for next month's intake.";
-    }
-  })();
 
   document.getElementById('nav-wa').href = waLink(messages.general);
   document.getElementById('hero-wa-1').href = waLink(messages.general);
   document.getElementById('final-wa').href = waLink(messages.general);
   document.getElementById('wa-float').href = waLink(messages.general);
-  document.getElementById('referral-wa').href = waLink(messages.referral);
   document.getElementById('wa-foundation').href = waLink(messages.foundation);
   document.getElementById('wa-elevate').href = waLink(messages.elevate);
   document.getElementById('wa-craft').href = waLink(messages.craft);
